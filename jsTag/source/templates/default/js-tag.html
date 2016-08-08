@@ -6,7 +6,8 @@
     ng-switch="tagsCollection.isTagEdited(tag)">
     <span
       ng-switch-when="false"
-      class="jt-tag active-{{tagsCollection.isTagActive(tag)}}">
+      data-tag-id="{{tag.id}}"
+      class="jt-tag valid-{{tag.valid}} active-{{tagsCollection.isTagActive(tag)}}">
       <span
         class="value"
         ng-click="tagsInputService.tagClicked(tag)"
@@ -19,9 +20,9 @@
     <span
       ng-switch-when="true">
       <input
-        type="text"
         class="jt-tag-edit"
-        focus-once
+        type="text"
+        focus-me="tagsCollection.isTagEdited(tag)"
         ng-model="tag.value"
         data-tag-id="{{tag.id}}"
         ng-keydown="inputService.tagInputKeydown(tagsCollection, {$event: $event})"

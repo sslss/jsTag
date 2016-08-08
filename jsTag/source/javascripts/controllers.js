@@ -25,8 +25,7 @@ jsTag.controller('JSTagMainCtrl', ['$attrs', '$scope', 'InputService', 'TagsInpu
   $scope.inputService = new InputService($scope.options);
 
   // Export tagsCollection separately since it's used alot
-  var tagsCollection = $scope.tagsInputService.tagsCollection;
-  $scope.tagsCollection = tagsCollection;
+  $scope.tagsCollection = $scope.tagsInputService.tagsCollection;
 
   // TODO: Should be inside inside tagsCollection.js
   // On every change to editedTags keep isThereAnEditedTag posted

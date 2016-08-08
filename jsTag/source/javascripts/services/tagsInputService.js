@@ -60,7 +60,8 @@ jsTag.factory('TagsInputService', ['JSTag', 'JSTagsCollection', function(JSTag, 
           }
 
           break;
-        case 8: // Backspace
+        case 46: // Delete
+        case 8:  // Backspace
           this.tagsCollection.removeTag(activeTag.id);
           inputService.isWaitingForInput = true;
 
